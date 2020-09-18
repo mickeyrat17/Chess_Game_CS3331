@@ -1,0 +1,13 @@
+Class Chess_Game handles receives user input
+	Continues to iterate until valid input is received
+
+Once valid piece, color, and column and row are received:
+	column is converted to int
+	object of appropriate piece is created
+
+Move location is checked against piece's current location and the logic of that pieces movement
+	Queen class uses both rook logic and bishop logic so those methods are copied into the queen object
+	
+User is able to check several moves for the same piece at the inputted location
+	User is able to enter a new piece to check its movement options
+	

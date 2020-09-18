@@ -1,25 +1,33 @@
 
 public class Pawn {
 	
-	private String piece_name;
-	private String color;
-	private char column;
+	private char piece_name = 'p';
+	private char color;
+	private int column;
 	private int row;
 	
-	public Pawn() {
-		
-	}
-	
-	public Pawn(String piece_name, String color, char column, int row) {
-		this.piece_name = piece_name;
+	public Pawn(char color, int column, int row) {
 		this.color = color;
 		this.column = column;
 		this.row = row;
 	}
+	public boolean move_logic( int move_column, int move_row) {
+		boolean possibleMove = true;
+		int move_direction = find_move_direction();
+		
+		if(move_column == get_column() && move_row == get_row() + move_direction) 
+			return possibleMove;
+		
+		return !possibleMove;
+	}
 	
-	
+	public int find_move_direction() {
+		if(this.color == 'b')
+			return -1;
+		return 1;
+	}
 
-	public char get_column() {
+	public int get_column() {
 		return this.column;
 	}
 	
